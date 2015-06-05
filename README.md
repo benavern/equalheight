@@ -1,4 +1,4 @@
-# equalheight
+# Equal Height
 
 Make your grid system's boxes the same height on same lines.
 
