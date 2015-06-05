@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Equal Height</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://labo.caradeuc.info/z-grid/css/z-grid.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	
+	<section class="sidebar align-center">
+		
+		<h1>Equal&nbsp;Height</h1>
+		
+		<p>A little jquery script that permits you resize your grid boxes so that each box on the same line has the same height</p>
+		
+		<p>
+			<a href="http://github.com/benavern/equalheight" class="button">Github</a>
+			<a href="js/equalheight.js" class="button" download="equalheight.js">Download</a>
+		</p>
+		
+		<p>
+			Made with <span class="pink">&heartsuit;</span> by <br> <a href="http://caradeuc.info">&copy; Benjamin Caradeuc</a>
+		</p>
+		
+		
+	</section>
+	
+	
+	
+	<section class="content">
+	
+		<div class="ko">
+		
+			<h1>The problem</h1>
+			
+			<p>
+				By default in many css grid systems, the boxes height depends on there content. 
+				For many reasons, it can be a problem. 
+			</p>
+			<p>
+				For example, with the grid system I created (<a href="http://labo.caradeuc.info/z-grid">Z-GRID</a>) (emmet code):
+			</p>
+			<pre>.z-grid>.z-2*4>.z-box</pre>
+			
+			<div class="z-grid">
+				<div class="z-2-f">
+					<div class="z-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, accusantium, possimus vero harum hic libero consectetur debitis nam ratione fugit porro fuga vitae quibusdam reprehenderit eum sapiente similique delectus dignissimos?</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repudiandae odio et.</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repudiandae odio et.</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, accusantium, possimus vero harum hic libero consectetur debitis nam ratione fugit porro fuga vitae quibusdam reprehenderit eum sapiente similique delectus dignissimos?</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="ok">
+		
+			<h1>The solution</h1>
+			
+			<p>
+				So, I decided to solve the problem with a little js (jQuery) script. 
+				You just have to download the script, declare it in the html and add the "equalheight" classe on each box.
+			</p>
+			<p>
+				For example, with <a href="http://labo.caradeuc.info/z-grid">Z-GRID</a> (emmet code):
+			</p>
+			<!--
+			<pre>&lt;div class="z-grid"&gt;<br>   &lt;div class="z-2"&gt;<br>      &lt;div class="z-box equalheight"&gt;<br>         ...<br>      &lt;/div&gt;<br>   &lt;/div&gt;<br>   &lt;div class="z-2"&gt;<br>      &lt;div class="z-box equalheight"&gt;<br>         ...<br>      &lt;/div&gt;<br>   &lt;/div&gt;<br>&lt;/div&gt;</pre>
+			-->
+			<pre>.z-grid>.z-2*4>.z-box.equalheight</pre>
+			<small>
+				All boxes must be vertically aligned by their top side. It is done by default in <a href="http://labo.caradeuc.info/z-grid">Z-GRID</a>.
+			</small>
+		
+			<div class="z-grid">
+				<div class="z-2-f">
+					<div class="z-box equalheight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, accusantium, possimus vero harum hic libero consectetur debitis nam ratione fugit porro fuga vitae quibusdam reprehenderit eum sapiente similique delectus dignissimos?</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box equalheight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repudiandae odio et.</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box equalheight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repudiandae odio et.</div>
+				</div>
+				<div class="z-2-f">
+					<div class="z-box equalheight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, accusantium, possimus vero harum hic libero consectetur debitis nam ratione fugit porro fuga vitae quibusdam reprehenderit eum sapiente similique delectus dignissimos?</div>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<p>
+				There are 2 automatic actions and you can do a manual action too:
+			</p>
+			
+			<h3>Automatic #1</h3>
+			<p>
+				The grid is automatically resized when the entire document is loaded.
+			</p>
+			
+			<h3>Automatic #2</h3>
+			<p>
+				The grid is automatically resized when the window is resized.
+			</p>
+			
+			<h3>Manual</h3>
+			<p>
+				You can call the function when you want in your javascript code. (it has been attached on the window)
+			</p>
+			<pre>equalheight()</pre>
+			
+			
+		</div>
+		
+	</section>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/equalheight.js"></script>
+</body>
+</html>
